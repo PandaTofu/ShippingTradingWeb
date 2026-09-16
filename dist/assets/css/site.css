@@ -30,7 +30,8 @@ button { font: inherit; }
 .site-header.is-scrolled { height: 68px; box-shadow: 0 8px 30px rgba(30,58,95,.14); }
 .header-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
 .brand { display: flex; align-items: center; gap: .8rem; min-width: 0; color: var(--navy); }
-.brand-mark { display: grid; place-items: center; width: 42px; height: 42px; flex: 0 0 auto; background: var(--navy); color: var(--gold); font: italic 700 1.4rem Georgia, serif; }
+.brand-logo { width: 82px; height: 58px; flex: 0 0 auto; overflow: hidden; background: #000; border-bottom: 2px solid var(--gold); }
+.brand-logo img { width: 106px; max-width: none; height: auto; transform: translate(-12px, -1px); }
 .brand-copy { display: grid; line-height: 1; }
 .brand-copy strong { font-size: 1rem; letter-spacing: .2em; }
 .brand-copy small { margin-top: .38rem; color: #687588; font-size: .6rem; letter-spacing: .14em; white-space: nowrap; }
@@ -192,6 +193,8 @@ h1, h2 { letter-spacing: -.04em; }
 }
 
 @media (max-width: 640px) {
+  .brand-logo { width: 66px; height: 50px; }
+  .brand-logo img { width: 91px; transform: translate(-12px, -1px); }
   .brand-copy small { display: none; }
   .hero { padding-top: 9rem; }
   .hero h1 { font-size: clamp(3.2rem,14vw,4.7rem); }
