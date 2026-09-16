@@ -1,0 +1,23 @@
+[Unit]
+Description=Bond website enquiry API
+After=network.target
+
+[Service]
+Type=simple
+User=caddy
+Group=caddy
+WorkingDirectory=/opt/bond-website-backend
+Environment=BOND_INQUIRY_HOST=127.0.0.1
+Environment=BOND_INQUIRY_PORT=8011
+Environment=BOND_INQUIRY_DIR=/opt/bond-inquiry-data
+ExecStart=/usr/bin/python3 /opt/bond-website-backend/server/inquiry_server.py
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/bond-inquiry-data
+
+[Install]
+WantedBy=multi-user.target

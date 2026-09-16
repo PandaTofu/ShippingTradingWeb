@@ -24,3 +24,5 @@ Then visit `http://127.0.0.1:8011/`. Submissions are saved to `data/inquiries.cs
 ## Deployment
 
 Deploy the contents of `dist/` to the web root. Run `server/inquiry_server.py` as a private service and reverse proxy `/api/inquiries` to `127.0.0.1:8011`. Set `BOND_INQUIRY_DIR` to a private writable directory outside the web root.
+
+Server configuration templates are stored in `deploy/`. The enquiry service listens on localhost only; no public firewall port is required.

@@ -1,0 +1,40 @@
+43-131-42-81.sslip.io {
+    encode zstd gzip
+    handle /api/* {
+        reverse_proxy 127.0.0.1:8000
+    }
+    handle {
+        root * /opt/marine-fuel-trade-system/frontend/dist
+        try_files {path} /index.html
+        file_server
+    }
+}
+
+:8080 {
+    encode zstd gzip
+    handle /api/* {
+        reverse_proxy 127.0.0.1:8000
+    }
+    handle {
+        root * /opt/marine-fuel-trade-system/frontend/dist
+        try_files {path} /index.html
+        file_server
+    }
+}
+
+:8081 {
+    encode zstd gzip
+    root * /opt/bond-website-preview
+    file_server
+}
+
+bond.43-131-42-81.sslip.io {
+    encode zstd gzip
+    handle /api/* {
+        reverse_proxy 127.0.0.1:8011
+    }
+    handle {
+        root * /opt/bond-website-preview
+        file_server
+    }
+}
