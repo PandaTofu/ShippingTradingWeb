@@ -12,7 +12,7 @@
   <header class="site-header" data-header><div class="container header-inner">
     <a class="brand" href="index.html" aria-label="Bond Shipping and Trading home"><span class="brand-logo" aria-hidden="true"><img src="assets/images/bond-logo-transparent.png" alt=""></span><span class="brand-copy"><strong>BOND</strong><small>SHIPPING &amp; TRADING</small></span></a>
     <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-menu-toggle><span></span><span></span></button>
-    <nav class="nav" aria-label="Main navigation" data-nav><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a class="nav-cta" href="contact.html" aria-current="page">Contact us</a></nav>
+    <nav class="nav" aria-label="Main navigation" data-nav><a href="index.html">Home</a><a href="gtnc.html">GTNC</a><a href="about.html">About</a><a href="services.html">Services</a><a href="ports.html">Ports</a><a class="nav-cta" href="contact.html" aria-current="page">Contact us</a></nav>
   </div></header>
 
   <main id="main">
@@ -25,18 +25,21 @@
       <div class="container contact-layout">
         <article class="contact-card reveal">
           <p class="kicker">Direct enquiry</p>
-          <h2>Reach our bunker desk.</h2>
-          <p>For the fastest response, include the port, expected delivery date, product and estimated quantity in your email.</p>
-          <div class="contact-item"><small>Email</small><a href="mailto:bunker@bondfuels.com?subject=Marine%20fuel%20enquiry">bunker@bondfuels.com</a></div>
-          <div class="contact-item"><small>Availability</small><span>24 hours a day, 7 days a week</span></div>
-          <div class="contact-item"><small>Singapore office</small><address>46 East Coast Road, #10-03<br>Eastgate, Singapore 428766</address></div>
-          <a class="button button-navy" href="mailto:bunker@bondfuels.com?subject=Marine%20fuel%20enquiry">Start an enquiry <span>→</span></a>
+          <div class="contact-card-heading">
+            <span class="contact-heading-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></span>
+            <h2>Reach our bunker desk.</h2>
+          </div>
+          <p>For the fastest response, include the port, expected delivery date, product and estimated quantity in your enquiry.</p>
+          <div class="contact-item"><span class="contact-item-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></span><div><small>Email</small><a href="mailto:bunker@bondfuels.com?subject=Marine%20fuel%20enquiry">bunker@bondfuels.com</a></div></div>
+          <div class="contact-item"><span class="contact-item-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9"></circle><polyline points="12,7 12,12 15,14"></polyline></svg></span><div><small>Availability</small><span>24 hours a day, 7 days a week</span></div></div>
+          <div class="contact-item"><span class="contact-item-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span><div><small>Registered address</small><address>46 East Coast Road, #10-03<br>Eastgate, Singapore 428766</address></div></div>
+          <button class="button button-navy" type="button" data-open-enquiry>Start an enquiry <span>→</span></button>
         </article>
         <aside class="office-panel reveal">
           <p class="kicker">International network</p>
           <h2>Regional knowledge. Global coordination.</h2>
           <p>Our team works across key shipping and energy markets, bringing local relationships into one coordinated service.</p>
-          <div class="office-tags" aria-label="Bond office regions"><span>Iraq</span><span>Singapore</span><span>China</span><span>United Arab Emirates</span></div>
+          <div class="office-tags" aria-label="Bond office regions"><span>Iraq</span><span>China</span><span>United Arab Emirates</span></div>
         </aside>
       </div>
     </section>
@@ -44,7 +47,31 @@
     <section class="cta"><div class="container reveal"><p class="kicker">Ready when you are</p><h2>One enquiry. A connected response.</h2><p>Share your operational requirements and our team will coordinate the next steps.</p><a class="button button-light" href="mailto:bunker@bondfuels.com?subject=Marine%20fuel%20enquiry">Email bunker desk <span>↗</span></a></div></section>
   </main>
 
-  <footer class="site-footer"><div class="container footer-grid"><div class="footer-brand"><strong>BOND</strong><span>Shipping and Trading Limited</span><p>Marine fuel supply, commodity trading and shipping services across global markets.</p></div><div class="footer-col"><h3>Company</h3><a href="about.html">About</a><a href="services.html">Services</a><a href="contact.html">Contact</a></div><div class="footer-col"><h3>Contact</h3><a href="mailto:bunker@bondfuels.com">bunker@bondfuels.com</a><p>46 East Coast Road, #10-03<br>Eastgate, Singapore 428766</p></div></div><div class="container footer-bottom">© 2026 Bond Shipping and Trading Limited. All rights reserved.</div></footer>
+  <dialog class="enquiry-dialog" data-enquiry-dialog aria-labelledby="enquiry-title">
+    <div class="enquiry-dialog-inner">
+      <div class="enquiry-dialog-header">
+        <div><p class="kicker">Request a quotation</p><h2 id="enquiry-title">Bunker Inquiry Form</h2><p>Share the vessel and delivery details below. Required fields are marked with an asterisk.</p></div>
+        <button class="dialog-close" type="button" aria-label="Close enquiry form" data-close-enquiry>×</button>
+      </div>
+      <form class="enquiry-form" data-enquiry-form>
+        <label class="form-honeypot" aria-hidden="true">Leave this field empty<input name="website" type="text" tabindex="-1" autocomplete="off"></label>
+        <div class="form-grid">
+          <label class="form-field"><span>Vessel name *</span><input name="vesselName" type="text" placeholder="e.g. MV Ocean Star" autocomplete="off" required></label>
+          <label class="form-field"><span>Bunker port *</span><input name="bunkerPort" type="text" placeholder="e.g. Singapore" autocomplete="off" required></label>
+          <label class="form-field"><span>Fuel type *</span><select name="fuelType" required><option value="">Select fuel type</option><option>VLSFO</option><option>ULSFO</option><option>MGO / MDO</option><option>HSFO</option><option>Biofuel blend</option><option>Other</option></select></label>
+          <label class="form-field"><span>Quantity (MT) *</span><input name="quantity" type="number" min="1" step="1" inputmode="numeric" placeholder="e.g. 500" required></label>
+          <label class="form-field"><span>Required date (ETA) *</span><input name="requiredDate" type="date" required></label>
+          <label class="form-field"><span>Your company *</span><input name="company" type="text" placeholder="Company name" autocomplete="organization" required></label>
+          <label class="form-field form-field-wide"><span>Contact email or WhatsApp *</span><input name="contact" type="text" placeholder="your@email.com or +65…" autocomplete="email" required></label>
+          <label class="form-field form-field-wide"><span>Remarks <small>Optional</small></span><textarea name="remarks" rows="4" placeholder="Vessel IMO, preferred delivery window or other requirements"></textarea></label>
+        </div>
+        <div class="form-actions"><p class="form-note">Your enquiry will be securely recorded for follow-up by our trading desk.</p><button class="button button-navy" type="submit" data-submit-enquiry>Send enquiry <span>→</span></button></div>
+        <p class="form-status" role="status" aria-live="polite" data-form-status></p>
+      </form>
+    </div>
+  </dialog>
+
+  <footer class="site-footer"><div class="container footer-grid"><div class="footer-brand"><strong>BOND</strong><span>Shipping and Trading Limited</span><p>Marine fuel supply, commodity trading and shipping services across global markets.</p></div><div class="footer-col"><h3>Company</h3><a href="gtnc.html">GTNC</a><a href="about.html">About</a><a href="services.html">Services</a><a href="ports.html">Ports</a><a href="contact.html">Contact</a></div><div class="footer-col"><h3>Contact</h3><a href="mailto:bunker@bondfuels.com">bunker@bondfuels.com</a><p>46 East Coast Road, #10-03<br>Eastgate, Singapore 428766</p></div></div><div class="container footer-bottom">© 2026 Bond Shipping and Trading Limited. All rights reserved.</div></footer>
   <script src="assets/js/site.js"></script>
 </body>
 </html>

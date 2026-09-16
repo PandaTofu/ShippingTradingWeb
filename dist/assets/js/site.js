@@ -57,3 +57,60 @@ videoControl?.addEventListener('click', async () => {
     video.pause();
   }
 });
+
+const enquiryDialog = document.querySelector('[data-enquiry-dialog]');
+const enquiryForm = document.querySelector('[data-enquiry-form]');
+const enquiryStatus = document.querySelector('[data-form-status]');
+const enquirySubmit = document.querySelector('[data-submit-enquiry]');
+
+document.querySelectorAll('[data-open-enquiry]').forEach((button) => {
+  button.addEventListener('click', () => {
+    if (typeof enquiryDialog?.showModal === 'function') {
+      enquiryDialog.showModal();
+      enquiryDialog.querySelector('input')?.focus();
+    }
+  });
+});
+
+document.querySelectorAll('[data-close-enquiry]').forEach((button) => {
+  button.addEventListener('click', () => enquiryDialog?.close());
+});
+
+enquiryDialog?.addEventListener('click', (event) => {
+  if (event.target === enquiryDialog) enquiryDialog.close();
+});
+
+enquiryForm?.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  if (!enquiryForm.reportValidity()) return;
+
+  enquiryStatus.className = 'form-status';
+  enquiryStatus.textContent = 'Submitting your enquiry…';
+  enquirySubmit.disabled = true;
+  enquirySubmit.setAttribute('aria-busy', 'true');
+
+  const formData = new FormData(enquiryForm);
+  const payload = Object.fromEntries(formData.entries());
+
+  try {
+    const response = await fetch('/api/inquiries', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(result.error || 'The enquiry could not be recorded.');
+
+    enquiryStatus.classList.add('is-success');
+    enquiryStatus.textContent = `Thank you. Your enquiry has been recorded. Reference: ${result.reference}`;
+    enquiryForm.reset();
+  } catch (error) {
+    enquiryStatus.classList.add('is-error');
+    enquiryStatus.textContent = window.location.protocol === 'file:'
+      ? 'The form interface is ready, but saving requires the local enquiry server or the deployed website.'
+      : error.message;
+  } finally {
+    enquirySubmit.disabled = false;
+    enquirySubmit.removeAttribute('aria-busy');
+  }
+});

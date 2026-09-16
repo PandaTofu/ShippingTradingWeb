@@ -9,12 +9,18 @@ Static corporate website for Bond Shipping and Trading Limited.
 - `dist/assets/js/` contains shared interactions.
 - `dist/assets/images/` contains optimized WebP images.
 - `dist/assets/video/` contains the optimized hero video.
+- `server/` contains the enquiry API that records submissions to CSV.
 
 ## Local preview
 
-Open `dist/index.html` directly in a browser, or serve the repository root with any static web server and visit `/dist/`.
+For page-only preview, open `dist/index.html` directly. To preview the enquiry submission flow, run:
+
+```powershell
+python server/inquiry_server.py
+```
+
+Then visit `http://127.0.0.1:8011/`. Submissions are saved to `data/inquiries.csv` by default.
 
 ## Deployment
 
-Deploy the contents of `dist/` to the web root. No build step or server-side runtime is required.
-
+Deploy the contents of `dist/` to the web root. Run `server/inquiry_server.py` as a private service and reverse proxy `/api/inquiries` to `127.0.0.1:8011`. Set `BOND_INQUIRY_DIR` to a private writable directory outside the web root.
