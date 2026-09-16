@@ -22,6 +22,7 @@ body.menu-open { overflow: hidden; }
 img, video { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; }
+[hidden] { display: none !important; }
 .container { width: min(calc(100% - 2 * var(--gutter)), var(--content)); margin-inline: auto; }
 .skip-link { position: fixed; top: -60px; left: 1rem; z-index: 100; padding: .7rem 1rem; background: white; color: var(--navy); }
 .skip-link:focus { top: 1rem; }
