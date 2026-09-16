@@ -205,7 +205,7 @@ h1, h2 { letter-spacing: -.04em; }
 .contact-item a + a { margin-top: .25rem; }
 .contact-item address { line-height: 1.55; }
 .contact-card > .button { margin-top: 1.6rem; cursor: pointer; }
-.office-panel { min-height: 0px; display: grid; align-content: end; padding: 2.5rem; background: linear-gradient(0deg,rgba(16,41,71,.86),rgba(16,41,71,.22)), url("../images/dubai-offices.webp") center/cover; color: white; }
+.office-panel { min-height: 0px; display: grid; align-content: space-evenly; padding: 2.5rem; background: linear-gradient(0deg,rgba(16,41,71,.86),rgba(16,41,71,.22)), url("../images/dubai-offices.webp") center/cover; color: white; }
 .office-panel h2 { color: white; font-size: 2.6rem; }
 .office-panel p { max-width: 560px; color: rgba(255,255,255,.78); }
 .office-tags { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1rem; }
